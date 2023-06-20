@@ -1,7 +1,7 @@
-/*-*-*-*Creando objectId-*-*-*-*/
+/*-*-*-*Creando objectId-*-*-***-*/
 var object=ObjectId()
 
-/*-*-*-*Funciones de object Id-*-*-*-*- */
+/*-*-*-*Funciones de object Id-*-*-*-****- */
 print("-*-*Timestamp-*-*")
 print(object.getTimestamp())
 
