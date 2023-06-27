@@ -100,6 +100,75 @@ print("-*-*-*Alumnos que no son mayores a 30-*-*-*")
 print(resultado)
 
 
+/*
+$regex:
+mostrar a los alumnos donde su correo 
+comience con una vocal
+ */
+
+var condicion={
+    correo:{$regex:/^[a,e,i,o,u].+/, $options:'i'}
+}
+var resultado=coleccion.find(condicion)
+print("-*-*-*personas que su correo comienza con una vocal-*-*-*")
+print(resultado)
+
+
+/*
+$regex: 
+mostrar a los alumnos donde su ciudad de origen termine con la letra 
+a | o
+ */
+var condicion={
+    ciudadOrigen:{$regex:/.+[a,o]$/, $options:'i'}
+}
+var resultado=coleccion.find(condicion)
+print("-*-*-*-*alumnos con ciudadorigen que termina con a u o-*-*-*")
+print(resultado)
+
+
+/*documento embebido*/
+/*mostrar a los documentos donde su calle sea mayo*/
+
+var condicion={
+    'direccion.calle':{$eq:"mayo"}
+}
+var resultado=coleccion.find(condicion)
+print("-*-*-*alumnos que su calle es mayo-*-*-*")
+print(resultado)
+
+
+/*
+elemMatch: 
+Mostrar a los alumnos que tengan la materia de arte
+*/
+
+var condicion={
+    materias:{$elemMatch:{nombre:{$eq:"arte"}}}
+}
+var resultado=coleccion.find(condicion)
+print("-*-*-*Alumnos con la materia de arte-*-*-*")
+print(resultado)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
